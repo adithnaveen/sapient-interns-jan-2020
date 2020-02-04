@@ -1,5 +1,6 @@
 package com.company.day3;
 
+// implementing interface comparable. 
 public class Device  implements Comparable<Device>{
 	private int dId; 
 	private String dName; 
