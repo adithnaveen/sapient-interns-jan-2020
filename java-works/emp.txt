@@ -1,3 +1,0 @@
-EmpId : 101:EmpName : kumar:EmpSal : 3000.0
-
-
