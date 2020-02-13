@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+	<!-- by this spring will know the aspects are annotated and for every business 
+		 a proxy object is create before or after or before-after -->
+	<aop:aspectj-autoproxy />
+	<bean class="aop.aspects.LoggingAspectAround" />
+
+
+	<bean id="account1" class="aop.model.Account">
+		<property name="accNo" value="101" />
+		<property name="accHolderName" value="Srinidhi" />
+		<property name="balance" value="1234" />
+	</bean>
+
+	<bean id="account2" class="aop.model.Account">
+		<property name="accNo" value="102" />
+		<property name="accHolderName" value="Siddhanth" />
+		<property name="balance" value="2345" />
+	</bean>
+
+	<bean id="caAccount" class="aop.bl.CAAccount" autowire="byName"/>
+	
+	
+	
+	<bean id="sbAccount" class="aop.bl.SBAccount">	
+		<property name="account" ref="account2"/>
+	</bean>
+	
+	<bean id="bankingSerivce" class="aop.service.BankingService" autowire="byName"/>
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -9,6 +9,25 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 
 
+
+<!--  loading data from external file  -->
+
+
+<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="location">
+		<value>emp.properties</value>
+	</property>
+</bean>
+
+
+<bean id="employee" class="com.company05.property.Employee">
+	<property name="empId" value="${employee.empid}" />
+	<property name="empName" value="${employee.empname}"/>
+	<property name="empSal" value="${employee.empsal}"/>
+</bean>
+
+
+
 	<bean id="emp" class="com.company03.postprocessor.Employee" autowire="byName">
 		<property name="empId" value="101"/>
 		<property name="email" value="preethi@ps.com"/>
@@ -18,8 +37,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 	<!--  register bean post processor's -->
 <!-- 	<bean class="com.company03.postprocessor.EmployeeBeanProcessor" />
- -->
-<!-- 
+ 
 
 	<bean id="mobile" class="com.company04.autowire.Mobile" autowire="byName"/>
 
