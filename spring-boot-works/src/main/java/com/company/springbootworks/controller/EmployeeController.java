@@ -64,9 +64,9 @@ public class EmployeeController {
 
 		employee.setPort(Integer.parseInt(environment.getProperty("local.server.port")));
 
-		Employee emp = employee.add(linkTo(methodOn(EmployeeController.class).getAllEmployees()).withSelfRel());
+//		Employee emp = employee.add(linkTo(methodOn(EmployeeController.class).getAllEmployees()).withSelfRel());
 
-		return new ResponseEntity<Employee>(emp, HttpStatus.OK);
+		return new ResponseEntity<Employee>(employee, HttpStatus.OK);
 	}
 
 	@PostMapping("/emps")
