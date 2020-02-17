@@ -1,5 +1,7 @@
 package com.company.springbootworks.beans;
 
+import org.springframework.hateoas.RepresentationModel;
+
 //import org.springframework.hateoas.Link;
 //import org.springframework.hateoas.RepresentationModel;
 
@@ -15,11 +17,12 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 
-public class Employee{ // extends RepresentationModel<Employee> {
+public class Employee  extends RepresentationModel<Employee> {
 	private int id; 
 	private String empName; 
 	private int empAge; 
 	private String email; 
+	private int port; 
 	
 	private Address address;
 
