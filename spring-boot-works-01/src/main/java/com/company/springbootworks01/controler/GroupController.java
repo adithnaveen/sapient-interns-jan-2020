@@ -17,7 +17,8 @@ public class GroupController {
 	// and the employee information will be taken from 
 	// another micro service 
 	@GetMapping("/groups/{groupId}/{empId}")
-	public Object getGroupWithEmployees( @PathVariable int groupId, @PathVariable int empId) {
+	public Object getGroupWithEmployees( @PathVariable int groupId, 
+				@PathVariable int empId) {
 		System.out.println("Requested Group ID " + groupId);
 		return employeeServiceProxy.getEmployee(empId); 
 	} 

@@ -7,6 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 
 
+
 @EnableDiscoveryClient
 @EnableFeignClients("com.company.springbootworks01.service")
 @SpringBootApplication(scanBasePackages = {"com.company.springbootworks01.service", "com.company.springbootworks01.controler"})
